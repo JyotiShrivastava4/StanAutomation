@@ -1,5 +1,14 @@
 # StanAutomation
 
+How to run the project:
+1. Download the project from git repository. Open the project in Visual Studio Code.
+2. Download Node using this URL: https://nodejs.org/en/download/current/
+
+Prerequistie : Download and istall
+- Mocha 
+- Chai
+- Mochawesome
+- Cypress
 
  How did you decide on the structure and framework of your solution?
  
