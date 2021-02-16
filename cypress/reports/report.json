@@ -1,0 +1,165 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-16T14:55:59.889Z",
+    "end": "2021-02-16T14:56:45.228Z",
+    "duration": 45339,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0f3b676b-138b-436b-8e56-56351ee22806",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\StanAutomation\\StanWatch.js",
+      "file": "cypress\\integration\\examples\\StanAutomation\\StanWatch.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cf3d8492-7836-4e41-847f-3344805b3125",
+          "title": "Automation of Stan watch",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test_01 - Navigate to Stan watch page",
+              "fullTitle": "Automation of Stan watch Test_01 - Navigate to Stan watch page",
+              "timedOut": null,
+              "duration": 13653,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Navigates to stan watch site\ncy.visit(sWatchURL);\ncy.url().should('contain', 'watch');\ncy.title().should('equal', sExpectedWatchPageTitle);",
+              "err": {},
+              "uuid": "70851886-d3be-46ff-946a-2a685b9173d2",
+              "parentUUID": "cf3d8492-7836-4e41-847f-3344805b3125",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test_02 - Click on Bump series",
+              "fullTitle": "Automation of Stan watch Test_02 - Click on Bump series",
+              "timedOut": null,
+              "duration": 18552,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Click on bump series and verify that respective page should open\ncy.get(sBump).click();\ncy.url().should('contain', 'bump');\ncy.title().should('equal', sExpectedWatchBumpTitle);",
+              "err": {},
+              "uuid": "4aec2f53-9bab-456b-a721-760d9a63fb49",
+              "parentUUID": "cf3d8492-7836-4e41-847f-3344805b3125",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test_03 - View trailers and extras",
+              "fullTitle": "Automation of Stan watch Test_03 - View trailers and extras",
+              "timedOut": null,
+              "duration": 3816,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//slect trailer and extra for bump series from dropdown and verify that 'Trailers and Extra' page should be opened\ncy.get(sEpisodes).find(sTrailerExtra).click({\n  force: true\n});\ncy.url(sStanPlanPageHaeder).should('contain', sExpextedTrailerAndExtraUrl);",
+              "err": {},
+              "uuid": "87d1cb85-210d-453e-93fa-6b266253008c",
+              "parentUUID": "cf3d8492-7836-4e41-847f-3344805b3125",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test_04 - Click on start your free trail button",
+              "fullTitle": "Automation of Stan watch Test_04 - Click on start your free trail button",
+              "timedOut": null,
+              "duration": 1405,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Click on start free trail and verify thar plan model window should displayed\ncy.get(sStanMainPageHeader).find(sWatchBumpNow).click();\ncy.get(sStanPlanPageHaeder).should('be.visible');",
+              "err": {},
+              "uuid": "3003c0c3-fcfb-49dd-9f80-7cbbb24cde0b",
+              "parentUUID": "cf3d8492-7836-4e41-847f-3344805b3125",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "70851886-d3be-46ff-946a-2a685b9173d2",
+            "4aec2f53-9bab-456b-a721-760d9a63fb49",
+            "87d1cb85-210d-453e-93fa-6b266253008c",
+            "3003c0c3-fcfb-49dd-9f80-7cbbb24cde0b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 37426,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "quiet": true,
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": true,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

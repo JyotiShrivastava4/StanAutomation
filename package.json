@@ -1,0 +1,34 @@
+{
+  "name": "framework",
+  "version": "1.0.0",
+  "description": "Stan Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "Test",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox",
+    "cy:run:stan":"./node_modules/.bin/cypress run --spec cypress\\integration\\examples\\StanAutomation\\Stan.js --browser chrome",
+    "cy:run:stanplay":"./node_modules/.bin/cypress run --spec cypress\\integration\\examples\\StanAutomation\\StanPlay.js --browser chrome",
+    "cy:run:stanwatch":"./node_modules/.bin/cypress run --spec cypress\\integration\\examples\\StanAutomation\\StanWatch.js --browser chrome",
+    "cy:run:api":"./node_modules/.bin/cypress run --spec cypress\\integration\\API_Automation.js --browser chrome",
+    "cy:run:mock":"./node_modules/.bin/cypress run --spec cypress\\integration\\API_Mock_Automation.js --browser firefox",
+    "cypress:open": "cypress open"
+  },
+  "keywords": [
+    "Stan",
+    "Project",
+    "on",
+    "Cypress"
+  ],
+  "author": "Jyoti",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^6.4.0",
+    "mocha": "^8.3.0",
+    "save": "^2.4.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "mochawesome": "^6.2.1"
+  }
+}

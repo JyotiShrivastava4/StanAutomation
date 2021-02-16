@@ -1,0 +1,127 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-16T15:11:57.645Z",
+    "end": "2021-02-16T15:12:09.793Z",
+    "duration": 12148,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "881ea3bf-e0c3-45c6-8da9-38bffef5f192",
+      "title": "",
+      "fullFile": "cypress\\integration\\API_Mock_Automation.js",
+      "file": "cypress\\integration\\API_Mock_Automation.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6eed04f1-701b-4dd5-932a-0e58cbbafd75",
+          "title": "Mock API Automation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test_01 - Response from actual API",
+              "fullTitle": "Mock API Automation Test_01 - Response from actual API",
+              "timedOut": null,
+              "duration": 4849,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Navigate to the URL and verify if response are getting from actual API \ncy.visit('https://jsonplaceholder.cypress.io/');\ncy.get('#run-button').click();\ncy.request('https://jsonplaceholder.cypress.io/todos/1').should(function (response) {\n  cy.log(response.body.title);\n  (0, _chai.expect)(response.body.title).equal('delectus aut autem');\n  cy.log(response.body.id);\n  (0, _chai.expect)(response.body.id).equal(1);\n  cy.log(response.body.userId);\n  (0, _chai.expect)(response.body.userId).equal(1);\n  cy.log(response.body.completed);\n  (0, _chai.expect)(response.body.completed).equal(false);\n});",
+              "err": {},
+              "uuid": "a5cab38c-fdd1-461b-bc31-0a11355241f3",
+              "parentUUID": "6eed04f1-701b-4dd5-932a-0e58cbbafd75",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test_02 - Response from Mock",
+              "fullTitle": "Mock API Automation Test_02 - Response from Mock",
+              "timedOut": null,
+              "duration": 1520,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Navigate to the URL and mock the response from fixtures/MockData.json file and \n//verify if response are properly mocked for not \ncy.visit('https://jsonplaceholder.cypress.io/'); // add alias 'GetComment'\ncy.intercept('GET', '**/todos/*', {\n  fixture: 'MockData.json'\n}).as('getComment');\ncy.get('#run-button').click(); //wait to get response back from mock\ncy.wait('@getComment').should(function (_ref) {\n  var response = _ref.response;\n  cy.log(response.body.title);\n  (0, _chai.expect)(response.body.title).equal('This is the mock response');\n  cy.log(response.body.id);\n  (0, _chai.expect)(response.body.id).equal(1);\n  cy.log(response.body.userId);\n  (0, _chai.expect)(response.body.userId).equal('Mock001');\n  cy.log(response.body.completed);\n  (0, _chai.expect)(response.body.completed).equal(true);\n});",
+              "err": {},
+              "uuid": "570837e1-f635-431d-860f-40e0ead900f0",
+              "parentUUID": "6eed04f1-701b-4dd5-932a-0e58cbbafd75",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a5cab38c-fdd1-461b-bc31-0a11355241f3",
+            "570837e1-f635-431d-860f-40e0ead900f0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6369,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "quiet": true,
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-13T14:07:21.514Z",
+    "end": "2021-02-13T14:08:08.976Z",
+    "duration": 47462,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b6a46d73-4f63-4e80-a0e1-2c0e1bec4881",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\StanAutomation\\Stan.js",
+      "file": "cypress\\integration\\examples\\StanAutomation\\Stan.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3bf5217d-1896-440c-bd3e-066618b8d9c5",
+          "title": "Automation of Stan ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigate to Stan login page",
+              "fullTitle": "Automation of Stan  Navigate to Stan login page",
+              "timedOut": null,
+              "duration": 21296,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://stan.com.au/');\ncy.get('.site__login').click();\ncy.get(sUserLoc).should('be.visible');\ncy.EnterUsername(sUserLoc, sUserVal);\ncy.get(sPassLoc).should('be.visible');\ncy.EnterPassword(sPassLoc, sPassVal);\ncy.get(sLoginLoc).should('be.visible');\ncy.ClickOnlogin(sLoginLoc);",
+              "err": {},
+              "uuid": "e3a4626a-7e67-48c4-ad39-81df249758a4",
+              "parentUUID": "3bf5217d-1896-440c-bd3e-066618b8d9c5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit Profile",
+              "fullTitle": "Automation of Stan  Edit Profile",
+              "timedOut": null,
+              "duration": 11247,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".profiles__button\").should('be.visible');\ncy.get(\".profiles__button\").click(); //cy.get(\".icon icon__profile\").should('be.visible')\ncy.get(\".wiw-profiles__icon-overlay\").click(); //cy.get(\"h2\").should(have.text,'Edit Profile')\ncy.get(\"#name\").should('be.visible'); //cy.get('#name').then('sInitialName')\n//cy.get('#name').should('contain','Jyoti')\nif (cy.get('#name').innertext == sName) {\n  cy.log(sName);\n  sFinalName = sNewName;\n  cy.get('#name').clear();\n  cy.get('#name').type(sFinalName);\n} else {\n  var sFinalName = sName;\n  cy.get('#name').clear();\n  cy.get('#name').type(sName);\n}\ncy.get('.profiles__button--secondary').should('be.visible');\ncy.get('.profiles__button--primary').should('be.visible');\ncy.get('.profiles__button--primary').click(); //Verify the name is chnaged after save\ncy.get(':nth-child(1) > .wiw-profiles__name > p').should('have.text', sFinalName);",
+              "err": {},
+              "uuid": "8bc0cbd5-8e08-470d-b7c3-df67512b326f",
+              "parentUUID": "3bf5217d-1896-440c-bd3e-066618b8d9c5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e3a4626a-7e67-48c4-ad39-81df249758a4",
+            "8bc0cbd5-8e08-470d-b7c3-df67512b326f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 32543,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reporterDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": true,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

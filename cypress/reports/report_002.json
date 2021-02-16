@@ -1,0 +1,127 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-16T15:01:56.592Z",
+    "end": "2021-02-16T15:03:02.733Z",
+    "duration": 66141,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "19945a43-df7e-4bf5-9100-539ca2eff28b",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\StanAutomation\\Stan.js",
+      "file": "cypress\\integration\\examples\\StanAutomation\\Stan.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "31ee882b-a847-4f9a-b8fb-94e9a212ee50",
+          "title": "Automation of Stan ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test_01 - Navigate to Stan login page",
+              "fullTitle": "Automation of Stan  Test_01 - Navigate to Stan login page",
+              "timedOut": null,
+              "duration": 45314,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Go to stan, Enter username, password and click on login page\ncy.visit(sStanUrl);\ncy.get(sHeaderLoginLink).click();\ncy.get(sUserLoc).should('be.visible');\ncy.EnterUsername(sUserLoc, sUserVal);\ncy.get(sPassLoc).should('be.visible');\ncy.EnterPassword(sPassLoc, sPassVal);\ncy.get(sLoginLoc).should('be.visible');\ncy.ClickOnlogin(sLoginLoc); //verify that profile name should be visible\ncy.get(sProfileButton).should('be.visible');",
+              "err": {},
+              "uuid": "05b7e285-8b91-4539-aacc-2fe3818c78fa",
+              "parentUUID": "31ee882b-a847-4f9a-b8fb-94e9a212ee50",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test-02 - Edit Customer Profile",
+              "fullTitle": "Automation of Stan  Test-02 - Edit Customer Profile",
+              "timedOut": null,
+              "duration": 4186,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Edit profile name\ncy.get(sProfileButton).should('be.visible');\ncy.get(sProfileButton).click();\ncy.get(sProfileOverlay).click();\ncy.get(sProfileNameTxtbox).should('be.visible');\ncy.get(sProfileNameTxtbox).invoke('val').then(function (val) {\n  cy.log(\"Value:\" + val); //Change profile name from Jyoti to Jyoti shrivastava and vice versa\n  if (val == sName) {\n    sFinalName = sNewName;\n    cy.log(sName);\n    cy.get(sProfileNameTxtbox).clear();\n    cy.get(sProfileNameTxtbox).type(sFinalName);\n  } else {\n    sFinalName = sName;\n    cy.get(sProfileNameTxtbox);\n    cy.get(sProfileNameTxtbox).clear();\n    cy.get(sProfileNameTxtbox).type(sName);\n  }\n});\ncy.get(sCancelButton).should('be.visible');\ncy.get(sSaveButton).should('be.visible');\ncy.get(sSaveButton).click();\ncy.wait(2000); //Verify that changes name should displayed on profile\ncy.get(sProfileNameLabel).then(function (res) {\n  expect(res).to.have.text(sFinalName);\n});",
+              "err": {},
+              "uuid": "bae2d352-8a63-4fd9-a408-aef84d5ff85f",
+              "parentUUID": "31ee882b-a847-4f9a-b8fb-94e9a212ee50",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "05b7e285-8b91-4539-aacc-2fe3818c78fa",
+            "bae2d352-8a63-4fd9-a408-aef84d5ff85f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 49500,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "quiet": true,
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

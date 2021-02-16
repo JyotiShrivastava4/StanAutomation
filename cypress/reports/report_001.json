@@ -1,0 +1,165 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-16T14:59:32.783Z",
+    "end": "2021-02-16T14:59:38.333Z",
+    "duration": 5550,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a3bc129c-09c6-4e45-b86e-16fea3835eed",
+      "title": "",
+      "fullFile": "cypress\\integration\\API_Automation.js",
+      "file": "cypress\\integration\\API_Automation.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a9eff271-4d9b-4a95-873d-665661709946",
+          "title": "API Automation Sample",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test_01 - Verify GET API status code",
+              "fullTitle": "API Automation Sample Test_01 - Verify GET API status code",
+              "timedOut": null,
+              "duration": 4363,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Call get API and verify response is 200 \ncy.request(\"GET\", 'https://postman-echo.com/get?foo1=bar1&foo2=bar2').its('status').should('be.equal', 200);",
+              "err": {},
+              "uuid": "37cbb153-d78e-4c45-9e7c-16a4c2e08561",
+              "parentUUID": "a9eff271-4d9b-4a95-873d-665661709946",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test_02 - Verify GET API response body",
+              "fullTitle": "API Automation Sample Test_02 - Verify GET API response body",
+              "timedOut": null,
+              "duration": 349,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Call get API and verify its response body \ncy.request('https://postman-echo.com/get?foo1=bar1&foo2=bar2').then(function (res) {\n  cy.log(res.body.args);\n  (0, _chai.expect)(res.body.args).has.property('foo1', 'bar1');\n  cy.log(res.body.url);\n  (0, _chai.expect)(res.body.url).equal('https://postman-echo.com/get?foo1=bar1&foo2=bar2');\n});",
+              "err": {},
+              "uuid": "bef7de08-23ee-4478-8d2c-e9553be1647d",
+              "parentUUID": "a9eff271-4d9b-4a95-873d-665661709946",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test_03 - Verify POST API status code",
+              "fullTitle": "API Automation Sample Test_03 - Verify POST API status code",
+              "timedOut": null,
+              "duration": 325,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Call post API along with request body and verify its status code\ncy.request(\"POST\", 'https://postman-echo.com/post', {\n  foo1: 'bar1',\n  foo2: 'bar2'\n}).then(function (res) {\n  cy.log(res.status);\n  (0, _chai.expect)(res.status).equal(200);\n});",
+              "err": {},
+              "uuid": "e9a4bbdd-76b2-48e7-b90b-5b8652358c1f",
+              "parentUUID": "a9eff271-4d9b-4a95-873d-665661709946",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test_04 - Verify POST API response body",
+              "fullTitle": "API Automation Sample Test_04 - Verify POST API response body",
+              "timedOut": null,
+              "duration": 346,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Call post along with request body and verify its response\ncy.request(\"POST\", 'https://postman-echo.com/post', {\n  foo1: 'bar1',\n  foo2: 'bar2'\n}).then(function (res) {\n  cy.log(res.body.json);\n  (0, _chai.expect)(res.body.json).has.property('foo1', 'bar1');\n  (0, _chai.expect)(res.body.headers).has.property('host', 'postman-echo.com');\n  (0, _chai.expect)(res.body.headers).has.property('x-forwarded-proto', 'https');\n});",
+              "err": {},
+              "uuid": "323bd605-168f-440b-a820-044454e99543",
+              "parentUUID": "a9eff271-4d9b-4a95-873d-665661709946",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "37cbb153-d78e-4c45-9e7c-16a4c2e08561",
+            "bef7de08-23ee-4478-8d2c-e9553be1647d",
+            "e9a4bbdd-76b2-48e7-b90b-5b8652358c1f",
+            "323bd605-168f-440b-a820-044454e99543"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5383,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "quiet": true,
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
