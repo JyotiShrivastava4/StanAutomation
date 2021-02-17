@@ -4,7 +4,7 @@ How to run the project:
 1. Download the project from git repository. Open the project in Visual Studio Code.
 2. Download Node using this URL: https://nodejs.org/en/download/current/
 
-Prerequistie : Download and install
+Prerequisite : Download and install
 - Mocha 
 - Chai
 - Mochawesome
